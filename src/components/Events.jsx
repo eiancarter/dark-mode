@@ -1,19 +1,16 @@
 import React from "react";
 
-const Events = ({ eventData }) => {
+const Events = ({eventData}) => {
   return (
     <div className="events">
-      {eventData.map(event => (
-        <div className="chart__container" key={event.id}>
-          <h2 className="coin__title">{event.title}</h2>
-          <h4 className="coin__symbol">{event.description}</h4>
-          <div className="coin__logo">
-            <img src={event.screenshot} height="40" alt={event.title} />
-          </div>
-          <h2 className="coin__title">{event.start_date}-{event.end_date}</h2>
-          <h2 className="coin__title">{event.city}</h2>
+        <div>{eventData.type}</div>
+        <h2>{eventData.title}</h2>
+        <h4>{eventData.description}</h4>
+        <div>
+        <img src={eventData.screenshot} height="40" alt={eventData.title} />
         </div>
-      ))}
+        <h2>{eventData.start_date}-{eventData.end_date}</h2>
+        <h2>{eventData.city}</h2>   
     </div>
   );
 };

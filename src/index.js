@@ -14,7 +14,7 @@ import Events from './components/Events';
 import "./styles.scss";
 
 const App = () => {
-  
+
   const [coinData, setCoinData] = useState([]);
   const [eventData, setEventData] = useState([]);
 
@@ -30,7 +30,10 @@ const App = () => {
     .get(
       "https://api.coingecko.com/api/v3/events?country_code=US"
     )
-    .then(res => setEventData(res.data))
+    .then(res => {
+      console.log(res.data)
+      setEventData(res.data)
+    })
     .catch(err => console.log(err));
   }, []);
 
@@ -42,7 +45,7 @@ const App = () => {
         <Route exact path='/'>
           <Charts coinData={coinData} />
         </Route>
-        <Route path='/events'>
+        <Route exact path='/events'>
           <Events eventData={eventData} />
         </Route>
       </Switch>
