@@ -27,14 +27,14 @@ const App = () => {
       .catch(err => console.log(err));
 
     axios
-    .get(
-      "https://api.coingecko.com/api/v3/events?country_code=US"
-    )
-    .then(res => {
-      console.log(res.data)
-      setEventData(res.data)
-    })
-    .catch(err => console.log(err));
+      .get(
+        "https://api.coingecko.com/api/v3/events?country_code=US"
+      )
+      .then(res => {
+        console.log(res.data)
+        setEventData(res.data)
+      })
+      .catch(err => console.log(err));
   }, []);
 
 
@@ -45,7 +45,7 @@ const App = () => {
         <Route exact path='/'>
           <Charts coinData={coinData} />
         </Route>
-        <Route exact path='/events'>
+        <Route path='/events'>
           <Events eventData={eventData} />
         </Route>
       </Switch>

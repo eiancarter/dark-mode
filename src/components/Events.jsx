@@ -1,6 +1,6 @@
 import React from "react";
 
-const Events = ({eventData}) => {
+const Events = ({ eventData }) => {
   return (
     <div className="events">
         <div>{eventData.type}</div>
